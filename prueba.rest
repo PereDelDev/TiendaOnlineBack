@@ -1,0 +1,58 @@
+@port = 3000
+
+@host = http://localhost:{{port}}
+
+
+###
+GET {{host}}/api/products
+###
+GET {{host}}/api/products/activos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhNmUxYjA4MzA3NzZkYTBmZTdlNiIsImlhdCI6MTcxMjU4MzY4OX0.PLGmSD94xO9Aa2LjS9Z8YG6bhZk6niE5NImNElNh6Vk
+###
+GET {{host}}/api/users/6613a6e1b0830776da0fe7e6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhNmUxYjA4MzA3NzZkYTBmZTdlNiIsImlhdCI6MTcxMjU4MzY4OX0.PLGmSD94xO9Aa2LjS9Z8YG6bhZk6niE5NImNElNh6Vk
+###
+POST http://127.0.0.1:3000/api/products
+Content-Type: application/json
+
+{  "description": "Cocina comida", "price": 120, "department": "cocina", "available": true, "stock": 30 }
+
+###
+GET {{host}}/api/products/home
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhNmUxYjA4MzA3NzZkYTBmZTdlNiIsImlhdCI6MTcxMjU3NTEyNH0.BcedOAQHiDW-y7eJWSXPTlivJSZKjElY385U5rIIyKo
+
+
+###
+GET {{host}}/api/products/price/20/max/200
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhNmUxYjA4MzA3NzZkYTBmZTdlNiIsImlhdCI6MTcxMjU3NTEyNH0.BcedOAQHiDW-y7eJWSXPTlivJSZKjElY385U5rIIyKo
+###
+GET {{host}}/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhNmUxYjA4MzA3NzZkYTBmZTdlNiIsImlhdCI6MTcxMjU3NTEyNH0.BcedOAQHiDW-y7eJWSXPTlivJSZKjElY385U5rIIyKo
+
+
+###
+POST {{host}}/api/users/register
+Content-Type: application/json
+
+{
+    "name": "pa",
+    "email": "",
+    "password": "12345"
+}
+###
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "email": "rodi@gmail.com2",
+    "password": "12345"
+}
+###
+PUT {{host}}/api/products/add_cart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhNmUxYjA4MzA3NzZkYTBmZTdlNiIsImlhdCI6MTcxMjU4MzY4OX0.PLGmSD94xO9Aa2LjS9Z8YG6bhZk6niE5NImNElNh6Vk
+Content-Type: application/json
+
+{
+    "product_id": "6565d2d08c270fdedef39564"
+}
+
